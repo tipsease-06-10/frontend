@@ -10,6 +10,7 @@ function NavBar() {
                 <NavLink><li>About</li></NavLink>
                 <NavLink><li>Contact</li></NavLink>
             </ul>
+            <button className='login-btn btn right'>Login/Signup</button>
         </div>
         </nav>
     )
