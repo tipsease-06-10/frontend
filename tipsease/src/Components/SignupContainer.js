@@ -7,7 +7,7 @@ class SignupContainer extends Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className='signup-container container'>
                 <SignupForm />
             </div>
         )
