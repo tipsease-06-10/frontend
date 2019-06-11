@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <nav>
         <div className='nav-wrapper'>
-            <span>Tipsease</span>
+            <span className='left'>Tipsease</span>
               <Link to='/login' className='login-btn btn right'>Login</Link>  
               <Link to='/signup' className='login-btn btn right'>Sign Up</Link>
         </div>
