@@ -9,7 +9,7 @@ function App() {
     <div className='App'>
       <NavBar />
       <div>
-      <Route exact path='/login' component={LoginContainer} />
+      <Route path='/login' component={LoginContainer} />
       <Route path='/signup' component={SignupContainer} />
       </div>
     </div>

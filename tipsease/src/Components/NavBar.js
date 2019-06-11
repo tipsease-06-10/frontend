@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function NavBar() {
     return (
         <nav>
         <div className='nav-wrapper'>
-            <span className='left'>Tipsease</span>
-              <Link to='/login' className='login-btn btn right'>Login</Link>  
-              <Link to='/signup' className='login-btn btn right'>Sign Up</Link>
+            <span className='left'>Tip$ease</span>
+              <NavLink to='/login' className='login-btn waves-effect waves-red btn right'>Login</NavLink>  
+              <NavLink to='/signup' className='login-btn waves-effect waves-red btn right'>Sign Up</NavLink>
         </div>
         </nav>
     )
