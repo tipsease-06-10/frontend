@@ -1,6 +1,5 @@
-import React from './node_modules/react';
-import { Link } from './node_modules/react-router-dom';
-import App from '../../App';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -14,4 +13,4 @@ function NavBar() {
     )
 }
 
-export default NavBar
+export default NavBar;
