@@ -12,12 +12,16 @@
 
 .signup-container {
   border: 1px solid #999;
-  margin-top: 10px;
+  margin-top: 25px;
   padding: 50px;
 }
 
 button {
   margin: 7.5px;
+}
+
+.form-btn {
+  margin: 5px 5px;
 }
 
 li {
