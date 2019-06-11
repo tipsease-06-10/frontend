@@ -4,7 +4,7 @@ function SignupForm() {
     return (
         <div>
             <form>
-              <h1>Sign Up</h1>
+              <h2>Sign Up</h2>
               <label>Full Name: <input type='text' placeholder='First Name' /><input type='text' placeholder='Last Name' /></label>
               <label>E-mail: <input type='email' placeholder='ex: email@yahoo.com' /></label>
               <label>Address: <input type='text' placeholder='Street Address' /><input type='text' placeholder='Street Address Line 2' />
