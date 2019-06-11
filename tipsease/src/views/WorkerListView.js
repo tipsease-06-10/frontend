@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
 import { WorkerList } from '../components';
@@ -16,7 +16,7 @@ class WorkerListView extends Component {
 
     render() {
         if(this.props.fetching) {
-            <Loader type="Puff" color="#00BFFF" height="90" width="60" />
+            <Loader type='Puff' color='#00BFFF' height='90' width='60' />
         }
         return (
             <div>

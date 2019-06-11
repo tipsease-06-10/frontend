@@ -2,7 +2,7 @@ import {
     FETCH_WORKER,
     FETCH_SUCCESS,
     FETCH_FAIL
-  } from "../actions";
+  } from '../actions';
 
   const initialState = {
       workers: [],

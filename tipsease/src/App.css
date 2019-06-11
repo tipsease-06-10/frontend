@@ -3,9 +3,9 @@
   padding: 25px;
 }
 
-.login-container {
+.user-login, .worker-login {
   border: 1px solid #999;
-  height: 40em;
+  height: 30em;
   margin-top: 50px;
   padding: 50px;
 }
