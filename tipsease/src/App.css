@@ -20,4 +20,15 @@ li {
 
 .login-btn {
   margin-top: 10px;
+  margin-right: 5px;
+}
+
+span {
+  font-size: 2rem;
+  padding-left: 7.5px;
+}
+
+.hero {
+  padding: 0 10px;
+  width: 100%;
 }

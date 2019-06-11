@@ -1,16 +1,14 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from './node_modules/react';
+import { Link } from './node_modules/react-router-dom';
+import App from '../../App';
 
 function NavBar() {
     return (
         <nav>
         <div className='nav-wrapper'>
-            <ul>
-                <NavLink><li>Home</li></NavLink>
-                <NavLink><li>About</li></NavLink>
-                <NavLink><li>Contact</li></NavLink>
-            </ul>
-            <button className='login-btn btn right'>Login/Signup</button>
+            <span>Tipsease</span>
+              <Link to='/login' className='login-btn btn right'>Login</Link>  
+              <Link to='/signup' className='login-btn btn right'>Sign Up</Link>
         </div>
         </nav>
     )

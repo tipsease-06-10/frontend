@@ -1,15 +1,19 @@
 import React from 'react';
-import LoginContainer from './Components/LoginContainer';
-import NavBar from './Components/NavBar';
+import { LoginContainer } from './components';
+import NavBar from './components/NavBar';
+import { Route } from 'react-router-dom';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar />
-      <LoginContainer />
+      <div>
+      <Route path='/login' component={LoginContainer} />
+      </div>
     </div>
+    
   );
 }
 
