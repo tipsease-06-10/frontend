@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 // components
-import NavBar from './components/nav/NavBar';
+import LandingPage from './components/landingpage/LandingPage';
+
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <NavBar />
-      </div>
+        <LandingPage />
     )
   }
 }
