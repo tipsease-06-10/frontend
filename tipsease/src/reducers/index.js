@@ -1,7 +1,10 @@
 import {
+    FETCH_WORKERS,
+    FETCH_WORKERS_SUCCESS,
+    FETCH_WORKERS_FAIL,
     FETCH_WORKER,
-    FETCH_SUCCESS,
-    FETCH_FAIL,
+    FETCH_WORKER_SUCCESS,
+    FETCH_WORKER_FAIL,
     LOGIN_START,
     LOGIN_SUCCESS,
     LOGIN_FAIL
@@ -14,18 +17,18 @@ import {
   };
   export const workerReducer = (state = initialState, action) => {
       switch(action.type) {
-          case FETCH_WORKER:
+          case FETCH_WORKERS:
               return {
                   ...state,
                   fetching: true
               };
-              case FETCH_SUCCESS:
+              case FETCH_WORKERS_SUCCESS:
                     return {
                       ...state,
                       workers: action.payload,
                       fetching: false
                     };
-                    case FETCH_FAIL: 
+                    case FETCH_WORKERS_FAIL: 
                     return {
                       ...state,
                       error: action.payload,
