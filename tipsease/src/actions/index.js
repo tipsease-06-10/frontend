@@ -10,12 +10,12 @@ export const getWorkers = () => dispatch => {
     dispatch({ type: FETCH_WORKERS });
     axios
     .get(
-        'https://eztip.herokuapp.com/workers/'
+        'https://eztip.herokuapp.com/workers'
     )
     .then(res => {
         dispatch({
             type: FETCH_WORKERS_SUCCESS,
-            payload: res.data.results
+            payload: res.data
         });
     })
     .catch(err => {
@@ -27,9 +27,30 @@ export const getWorkers = () => dispatch => {
 };
 
 //======== FETCH WORKER DATA ACTIONS =========
+
 export const FETCH_WORKER = 'FETCH_WORKER';
 export const FETCH_WORKER_SUCCESS = 'FETCH_WORKER_SUCCESS';
 export const FETCH_WORKER_FAIL = 'FETCH_WORKER_FAIL'
+
+export const getWorker = id => dispatch => {
+    dispatch({ type: FETCH_WORKER });
+    axios
+    .get(
+        `https://eztip.herokuapp.com/workers/${id}`
+    )
+    .then(res => {
+        dispatch({
+            type: FETCH_WORKER_SUCCESS,
+            payload: res.data
+        })
+    .catch(err => {
+        dispatch({
+            type: FETCH_WORKER_FAIL,
+            payload: err
+        });
+    })
+  });
+};
 
 
 //============ LOGIN ACTIONS ================
@@ -42,10 +63,13 @@ export const login = () => dispatch => {
     dispatch({ LOGIN_START });
     axios
     .post(
-        'https://eztip.herokuapp.com/login/'
+        'https://eztip.herokuapp.com/login'
     )
     .then(res => {
-        console.log(res)
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data
+        })
     })
     .catch(err => {
             dispatch({
