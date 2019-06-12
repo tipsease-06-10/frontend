@@ -29,26 +29,39 @@ export const getWorkers = () => dispatch => {
 
 //============ LOGIN ACTIONS ================
 
-export const LOGIN_START = 'LOGIN_START';
+// export const LOGIN_START = 'LOGIN_START';
+// export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+// export const LOGIN_FAIL = 'LOGIN_FAIL';
+
+// export const login = () => dispatch => {
+//     dispatch({ LOGIN_START });
+//     axios
+//     .post(
+//         'https://eztip.herokuapp.com/login/'
+//     )
+//     .then(res => {
+//         console.log(res)
+//     })
+//     .catch(err => {
+//             dispatch({
+//                 type: LOGIN_FAIL,
+//                 payload: err
+//             });
+//         });
+//     };
+
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-export const LOGIN_FAIL = 'LOGIN_FAIL';
 
-export const login = () => dispatch => {
-    dispatch({ LOGIN_START });
-    axios
-    .post(
-        'https://eztip.herokuapp.com/login/'
-    )
-    .then(res => {
-        console.log(res)
-    })
-    .catch(err => {
-            dispatch({
-                type: LOGIN_FAIL,
-                payload: err
-            });
-        });
-    };
+export function login() {
+  return {
+    type: LOGIN_SUCCESS,
+    payload: {
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c'
+    }
+  };
+}
 
 
-    //========================
+
+    //============
