@@ -85,3 +85,23 @@ export const login = () => dispatch => {
     export const ADD_TIP_START = 'ADD_TIP_START';
     export const ADD_TIP_SUCCESS = 'ADD_TIP_SUCCESS';
     export const ADD_TIP_FAIL = 'ADD_TIP_FAIL';
+
+    export const addTip = () => dispatch => {
+        dispatch({ ADD_TIP_START });
+        axios
+        .post(
+            'https://eztip.herokuapp/tips'
+        )
+        .then(res => {
+            dispatch({
+                type: ADD_TIP_SUCCESS,
+                payload: res.data
+            })
+            .catch(err => {
+                dispatch({
+                    type: ADD_TIP_FAIL,
+                    payload: err
+                });
+            });
+        });
+    };
