@@ -1,7 +1,10 @@
 import {
     FETCH_WORKER,
     FETCH_SUCCESS,
-    FETCH_FAIL
+    FETCH_FAIL,
+    LOGIN_START,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL
   } from '../actions';
 
   const initialState = {
@@ -34,3 +37,6 @@ import {
   };
 
   export default workerReducer;
+
+  //============ LOGIN REDUCERS ===============
+

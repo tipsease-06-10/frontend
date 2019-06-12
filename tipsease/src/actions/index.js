@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-//============================ FETCH_WORKER_DATA ACTIONS
+//=========== FETCH_WORKER_DATA ACTIONS ===============
 
 export const FETCH_WORKER = 'FETCH_WORKER';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
@@ -27,21 +27,21 @@ export const getWorkers = () => dispatch => {
 };
 
 
-//============================ LOGIN ACTIONS 
+//============ LOGIN ACTIONS ================
 
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 
-export const login = res => dispatch => {
+export const login = () => dispatch => {
     dispatch({ LOGIN_START });
     axios
     .post(
         'https://eztip.herokuapp.com/login/'
     )
-    .then(
+    .then(res => {
         console.log(res)
-    )
+    })
     .catch(err => {
             dispatch({
                 type: LOGIN_FAIL,
