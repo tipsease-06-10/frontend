@@ -59,11 +59,13 @@ export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 
-export const login = () => dispatch => {
+const user = { username: 'admin', password: 'password' };
+
+export const login = userData => dispatch => {
     dispatch({ LOGIN_START });
     axios
     .post(
-        'https://eztip.herokuapp.com/login'
+        'https://eztip.herokuapp.com/login', userData
     )
     .then(res => {
         dispatch({
@@ -79,6 +81,8 @@ export const login = () => dispatch => {
             });
         });
     };
+
+    login(user);
 
     //======== ADD TIP ACTIONS =============
 

@@ -38,7 +38,7 @@ function SignupForm() {
                       placeholder='Create your password'
                    />
                   </label>
-              <button className='btn-large'>Sign Up</button>
+              <button className='signup-btn btn-large'>Sign Up</button>
             </form>
         </div>
     )

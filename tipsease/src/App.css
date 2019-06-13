@@ -33,6 +33,10 @@ li {
   margin-right: 5px;
 }
 
+.signup-btn {
+  margin-top: 25px;
+}
+
 span {
   font-family: 'Leckerli One', cursive;
   font-size: 2rem;
