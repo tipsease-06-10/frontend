@@ -10,7 +10,9 @@ export const getWorkers = () => dispatch => {
     dispatch({ type: FETCH_WORKERS });
     axios
     .get(
-        'https://eztip.herokuapp.com/workers'
+        'https://eztip.herokuapp.com/workers', {
+            headers: { Authorization: localStorage.getItem('token') }
+        }
     )
     .then(res => {
         dispatch({
@@ -59,30 +61,16 @@ export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 
-const user = { username: 'admin', password: 'password' };
-
-export const login = userData => dispatch => {
-    dispatch({ LOGIN_START });
-    axios
+export const login = creds => dispatch => {
+    dispatch({ type: LOGIN_START });
+    return axios
     .post(
-        'https://eztip.herokuapp.com/login', userData
+        'https://eztip.herokuapp.com/login', creds
     )
     .then(res => {
-        dispatch({
-            type: LOGIN_SUCCESS,
-            payload: res.data
-        })
-    })
-    .catch(err => {
-        console.log(err)
-            dispatch({
-                type: LOGIN_FAIL,
-                payload: err
-            });
-        });
+        localStorage.setItem('token', res.data.token)
+      })
     };
-
-    login(user);
 
     //======== ADD TIP ACTIONS =============
 

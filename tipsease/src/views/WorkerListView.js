@@ -15,8 +15,8 @@ class WorkerListView extends Component {
     }
 
     render() {
-        if(this.props.fetching) {
-            <Loader type='Puff' color='#00BFFF' height='90' width='60' />
+        if(this.props.fetching || this.props.workers) {
+         return <Loader type='Puff' color='#2CBBAD' height='100' width='100' />
         }
         return (
             <div>
@@ -27,9 +27,9 @@ class WorkerListView extends Component {
 }
 
 const mapStateToProps = state => ({
-    workers: state.workerReducer.worker,
-    error: state.workerReducer.error,
-    fetching: state.workerReducer.fetching
+    workers: state.workers,
+    error: state.error,
+    fetching: state.fetching
 });
 
 export default connect(

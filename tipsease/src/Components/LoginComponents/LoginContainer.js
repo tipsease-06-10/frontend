@@ -5,7 +5,7 @@ class LoginContianer extends Component {
     render() {
         return (
             <div className='login-container container'>
-                <LoginForm />
+                <LoginForm history={this.props.history} />
             </div>
         )
     }
