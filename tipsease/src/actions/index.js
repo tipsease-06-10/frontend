@@ -44,6 +44,7 @@ export const getWorker = id => dispatch => {
             payload: res.data
         })
     .catch(err => {
+        console.log(err)
         dispatch({
             type: FETCH_WORKER_FAIL,
             payload: err
@@ -51,7 +52,6 @@ export const getWorker = id => dispatch => {
     })
   });
 };
-
 
 //============ LOGIN ACTIONS ================
 
@@ -72,13 +72,13 @@ export const login = () => dispatch => {
         })
     })
     .catch(err => {
+        console.log(err)
             dispatch({
                 type: LOGIN_FAIL,
                 payload: err
             });
         });
     };
-
 
     //======== ADD TIP ACTIONS =============
 
@@ -98,6 +98,7 @@ export const login = () => dispatch => {
                 payload: res.data
             })
             .catch(err => {
+                console.log(err)
                 dispatch({
                     type: ADD_TIP_FAIL,
                     payload: err

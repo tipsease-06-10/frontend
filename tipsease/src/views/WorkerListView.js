@@ -20,7 +20,7 @@ class WorkerListView extends Component {
         }
         return (
             <div>
-                <WorkerList workers={this.props.workers} />
+             <WorkerList workers={this.props.workers} />
             </div>
         );
     }
