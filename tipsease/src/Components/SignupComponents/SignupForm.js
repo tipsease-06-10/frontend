@@ -24,33 +24,20 @@ function SignupForm() {
                     placeholder='ex: email@yahoo.com' 
                     />
                 </label>
-              <label>Address: 
+                <label>Username: 
                   <input 
-                    type='text'
-                    name='address' 
-                    placeholder='Street Address' 
-                    />
+                     type='text' 
+                     name='username'
+                     placeholder='Choose your Username'
+                   />
+                  </label>
+                  <label>Password: 
                     <input 
-                      type='text' 
-                      name='address_2'
-                      placeholder='Street Address Line 2' 
-                      />
-                    <input 
-                      type='text'
-                      name='city' 
-                      placeholder='City' 
-                      />
-                    <input 
-                      type='text' 
-                      name='state'
-                      placeholder='State / Province' 
-                      />
-                    <input 
-                      type='number'
-                      name='zip' 
-                      placeholder='Postal / Zip Code' 
-                      />
-                      </label>
+                      type='password' 
+                      name='password'
+                      placeholder='Create your password'
+                   />
+                  </label>
               <button className='btn-large'>Sign Up</button>
             </form>
         </div>

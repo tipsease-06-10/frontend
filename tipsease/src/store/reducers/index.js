@@ -43,13 +43,29 @@ import {
               return {
                 ...state,
                 fetching: false
-              }
+              };
             case FETCH_WORKER_FAIL:
               return {
                 ...state,
                 error: action.payload,
                 fetching: false
-              }
+              };
+              case LOGIN_START:
+                return {
+                  ...state,
+                  fetching: true
+                };
+                case LOGIN_SUCCESS:
+                  return {
+                    ...state,
+                    fetching: false
+                  };
+                  case LOGIN_FAIL:
+                    return {
+                      ...state,
+                      error: action.payload,
+                      fetching: false
+                    }
                 default:
                   return state;
       }
