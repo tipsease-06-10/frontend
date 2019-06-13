@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
 import { WorkerList } from '../components';
-import { getWorkers } from '../actions';
+import { getWorkers } from '../store/actions';
 
 class WorkerListView extends Component {
     constructor() {
