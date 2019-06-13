@@ -26,6 +26,7 @@ import {
               return {
                 ...state,
                    workers: action.payload,
+                   error: null,
                    fetching: false
                     };
           case FETCH_WORKERS_FAIL: 

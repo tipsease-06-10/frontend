@@ -16,7 +16,7 @@ class WorkerListView extends Component {
 
     render() {
         if(this.props.fetching || this.props.workers) {
-         return <Loader type='Puff' color='#2CBBAD' height='100' width='100' />
+         return <Loader type='Circles' color='#2CBBAD' height='100' width='100' />
         }
         return (
             <div>
