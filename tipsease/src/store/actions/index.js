@@ -23,7 +23,7 @@ export const getWorkers = () => dispatch => {
     .catch(err => {
         dispatch({
             type: FETCH_WORKERS_FAIL,
-            payload: err
+            payload: err.payload
         });
     });
 };
@@ -71,6 +71,33 @@ export const login = creds => dispatch => {
         localStorage.setItem('token', res.data.token)
       })
     };
+
+    //======CREATE USER ACTIONS ===========
+
+export const CREATE_USER = 'CREATE_USER';
+export const CREATE_USER_SUCCESS = 'CREATE_USER_SUCCESS';
+export const CREATE_USER_FAIL = 'CREATE_USER_FAIL';
+
+export const createUser = () => dispatch => {
+    dispatch({ type: CREATE_USER });
+    axios
+    .post(
+        'https://eztip.herokuapp.com/workers/', {
+            headers: { Authorization: localStorage.getItem('token') }
+        })
+    .then(res => {
+        dispatch({ 
+            type: CREATE_USER_SUCCESS, 
+            payload: res.data 
+        })
+    .catch(err => {
+        dispatch({
+            type: CREATE_USER_FAIL, 
+            payload: err.payload 
+        });
+      });
+    });
+}
 
     //======== ADD TIP ACTIONS =============
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SignupForm from './SignupForm';
 import{ connect } from 'react-redux';
-import { userSignupRequest } from '../../store/actions/signupActions';
+
 
 class SignupPage extends Component {
     render() {
@@ -14,4 +14,4 @@ class SignupPage extends Component {
     }
 }
 
-export default connect(null, {userSignupRequest})(SignupPage);
+export default SignupPage
