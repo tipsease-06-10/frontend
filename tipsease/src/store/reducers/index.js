@@ -7,13 +7,17 @@ import {
     FETCH_WORKER_FAIL,
     LOGIN_START,
     LOGIN_SUCCESS,
-    LOGIN_FAIL
+    LOGIN_FAIL,
+    CREATE_USER,
+    CREATE_USER_SUCCESS,
+    CREATE_USER_FAIL
   } from '../actions';
 
   const initialState = {
       workers: [],
       error: '',
-      fetching: false
+      fetching: false,
+      userCreated: false
   };
   export const workerReducer = (state = initialState, action) => {
       switch(action.type) {
@@ -63,6 +67,25 @@ import {
                     fetching: false
                   };
                   case LOGIN_FAIL:
+                    return {
+                      ...state,
+                      error: action.payload,
+                      fetching: false
+                    };
+                  case CREATE_USER:
+                    return {
+                      ...state,
+                      error: '',
+                      fetching: true
+                    };
+                  case CREATE_USER_SUCCESS:
+                    return {
+                      ...state,
+                      error: '',
+                      fetching: false,
+                      userCreated: true
+                    };
+                  case CREATE_USER_FAIL:
                     return {
                       ...state,
                       error: action.payload,
