@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createUser } from '../../store/actions';
 
 class SignupForm extends Component {
-  state = {
-    creds: {
-      username: '',
-      email: '',
-      password: '',
-    }
-  };
-
+    state = {
+        username: '',
+        email: '',
+        password: ''  
+    };
 
 onChange = e => {
   this.setState({ 
-    creds: {
-      ...this.state.creds,
-      [e.target.name]: e.target.value 
-    }
-  });
+        ...this.state,
+        [e.target.name]: e.target.value 
+   });
 };
 
-signup = e => {
+createUser = e => {
   e.preventDefault();
   this.props
-  .signup(this.state.creds)
-  .then(() => this.props.history.push('/workers'))
+  .createUser(this.state)
+  this.setState({
+    username: '',
+    email: '',
+    password: ''
+  })
 };
 
   render() {
     return (
       <div>
-          <form onSubmit={this.onSubmit}>
+          <form onSubmit={this.createUser}>
             <h2>Sign Up</h2>
               <label>Username: 
                 <input 
@@ -65,4 +66,13 @@ signup = e => {
  }
 }
     
-export default SignupForm;
+const mapStateToProps = state => ({
+  username: state.username,
+  email: state.email,
+  password: state.password
+});
+
+export default connect(
+  mapStateToProps,
+  { createUser }
+)(SignupForm);
