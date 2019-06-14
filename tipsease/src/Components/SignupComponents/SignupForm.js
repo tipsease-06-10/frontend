@@ -19,7 +19,7 @@ onChange(e) {
 
 onSubmit(e) {
   e.preventDefault();
-  console.log(this);
+  this.props.userSignupRequest(this.state);
 }
 
   render() {
@@ -49,7 +49,7 @@ onSubmit(e) {
                   <input 
                     type='password'
                     value={this.state.password} 
-                    onChange={this.state.onChange}
+                    onChange={this.onChange}
                     name='password'
                     placeholder='Create your password'
                  />
@@ -58,7 +58,7 @@ onSubmit(e) {
                   <input 
                     type='password' 
                     value={this.state.passwordConfirm}
-                    onChange={this.state.onChange}
+                    onChange={this.onChange}
                     name='passwordConfirm'
                     placeholder='Confirm your password'
                  />
