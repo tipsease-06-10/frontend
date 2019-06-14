@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 
 class SignupForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
+    creds: {
       username: '',
       email: '',
       password: '',
-      passwordConfirm: '' 
     }
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+  };
 
-onChange(e) {
-  this.setState({ [e.target.name]: e.target.value });
-}
 
-onSubmit(e) {
+onChange = e => {
+  this.setState({ 
+    creds: {
+      ...this.state.creds,
+      [e.target.name]: e.target.value 
+    }
+  });
+};
+
+signup = e => {
   e.preventDefault();
-  this.props.userSignupRequest(this.state);
-}
+  this.props
+  .signup(this.state.creds)
+  .then(() => this.props.history.push('/workers'))
+};
 
   render() {
     return (
@@ -52,15 +56,6 @@ onSubmit(e) {
                     onChange={this.onChange}
                     name='password'
                     placeholder='Create your password'
-                 />
-                </label>
-                <label>Password Confirmation: 
-                  <input 
-                    type='password' 
-                    value={this.state.passwordConfirm}
-                    onChange={this.onChange}
-                    name='passwordConfirm'
-                    placeholder='Confirm your password'
                  />
                 </label>
             <button className='signup-btn btn-large'>Sign Up</button>
