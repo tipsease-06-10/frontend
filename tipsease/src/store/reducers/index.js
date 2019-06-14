@@ -81,6 +81,7 @@ import {
                   case CREATE_USER_SUCCESS:
                     return {
                       ...state,
+                      workers: action.payload,
                       error: '',
                       fetching: false,
                       userCreated: true

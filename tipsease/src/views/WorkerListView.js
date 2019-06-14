@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Loader from 'react-loader-spinner';
 
-import { WorkerList } from '../components';
+import WorkerList from '../components/WorkerComponents/WorkerList';
 import { getWorkers } from '../store/actions';
 
 class WorkerListView extends Component {
@@ -12,9 +11,6 @@ class WorkerListView extends Component {
     }
 
     render() {
-        if(this.props.fetching || this.props.workers) {
-         return <Loader type='Circles' color='#2CBBAD' height='100' width='100' />
-        }
         return (
             <div>
              <WorkerList workers={this.props.workers} />
