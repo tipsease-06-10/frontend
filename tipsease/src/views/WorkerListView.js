@@ -6,9 +6,6 @@ import { WorkerList } from '../components';
 import { getWorkers } from '../store/actions';
 
 class WorkerListView extends Component {
-    constructor() {
-        super();
-    }
 
     componentDidMount() {
         this.props.getWorkers();

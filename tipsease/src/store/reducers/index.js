@@ -12,7 +12,7 @@ import {
 
   const initialState = {
       workers: [],
-      error: null,
+      error: '',
       fetching: false
   };
   export const workerReducer = (state = initialState, action) => {
@@ -26,7 +26,7 @@ import {
               return {
                 ...state,
                    workers: action.payload,
-                   error: null,
+                   error: '',
                    fetching: false
                     };
           case FETCH_WORKERS_FAIL: 
@@ -59,6 +59,7 @@ import {
                 case LOGIN_SUCCESS:
                   return {
                     ...state,
+                    workers: action.payload,
                     fetching: false
                   };
                   case LOGIN_FAIL:

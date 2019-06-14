@@ -4,12 +4,14 @@ import Worker from './Worker';
 
 const WorkerList = props => {
     return (
-        <ul>
+        <div>
           {props.workers.map(worker => {
               return <Worker key={worker.username} worker={worker} />
           })}
-        </ul>
+        </div>
     )
 }
 
 export default WorkerList;
+
+

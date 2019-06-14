@@ -1,47 +1,73 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function SignupForm() {
-    return (
-        <div>
-            <form>
-              <h2>Sign Up</h2>
-              <label>Full Name: 
-                  <input 
-                    type='text'
-                    name='first_name' 
-                    placeholder='First Name' 
-                    />
-                    <input 
-                      type='text'
-                      name='last_name' 
-                      placeholder='Last Name' 
-                      />
-                </label>
-              <label>E-mail: 
-                  <input 
-                    type='email'
-                    name='email' 
-                    placeholder='ex: email@yahoo.com' 
-                    />
-                </label>
-                <label>Username: 
-                  <input 
-                     type='text' 
-                     name='username'
-                     placeholder='Choose your Username'
-                   />
-                  </label>
-                  <label>Password: 
-                    <input 
-                      type='password' 
-                      name='password'
-                      placeholder='Create your password'
-                   />
-                  </label>
-              <button className='signup-btn btn-large'>Sign Up</button>
-            </form>
-        </div>
-    )
+class SignupForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      email: '',
+      password: '',
+      passwordConfirm: '' 
+    }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+onChange(e) {
+  this.setState({ [e.target.name]: e.target.value });
 }
 
+onSubmit(e) {
+  e.preventDefault();
+  console.log(this);
+}
+
+  render() {
+    return (
+      <div>
+          <form onSubmit={this.onSubmit}>
+            <h2>Sign Up</h2>
+              <label>Username: 
+                <input 
+                   type='text' 
+                   value={this.state.username}
+                   onChange={this.onChange}
+                   name='username'
+                   placeholder='Choose your Username'
+                 />
+                </label>
+                <label>Email:  
+                <input 
+                   type='email' 
+                   value={this.state.email}
+                   onChange={this.onChange}
+                   name='email'
+                   placeholder='ex@email.com'
+                 />
+                </label>
+                <label>Password: 
+                  <input 
+                    type='password'
+                    value={this.state.password} 
+                    onChange={this.state.onChange}
+                    name='password'
+                    placeholder='Create your password'
+                 />
+                </label>
+                <label>Password Confirmation: 
+                  <input 
+                    type='password' 
+                    value={this.state.passwordConfirm}
+                    onChange={this.state.onChange}
+                    name='passwordConfirm'
+                    placeholder='Confirm your password'
+                 />
+                </label>
+            <button className='signup-btn btn-large'>Sign Up</button>
+          </form>
+      </div>
+  )
+ }
+}
+    
 export default SignupForm;

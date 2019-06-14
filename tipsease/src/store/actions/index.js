@@ -4,13 +4,13 @@ import axios from 'axios';
 
 export const FETCH_WORKERS = 'FETCH_WORKERS';
 export const FETCH_WORKERS_SUCCESS = 'FETCH_WORKERS_SUCCESS';
-export const FETCH_WORKERS_FAIL = 'FETCH_WORKERS_FAIL'
+export const FETCH_WORKERS_FAIL = 'FETCH_WORKERS_FAIL';
 
 export const getWorkers = () => dispatch => {
     dispatch({ type: FETCH_WORKERS });
     axios
     .get(
-        'https://eztip.herokuapp.com/workers', {
+        'https://eztip.herokuapp.com/workers/', {
             headers: { Authorization: localStorage.getItem('token') }
         }
     )
@@ -65,7 +65,7 @@ export const login = creds => dispatch => {
     dispatch({ type: LOGIN_START });
     return axios
     .post(
-        'https://eztip.herokuapp.com/login', creds
+        'https://eztip.herokuapp.com/login/', creds
     )
     .then(res => {
         localStorage.setItem('token', res.data.token)
@@ -82,7 +82,7 @@ export const login = creds => dispatch => {
         dispatch({ ADD_TIP_START });
         axios
         .post(
-            'https://eztip.herokuapp/tips'
+            'https://eztip.herokuapp/tips/'
         )
         .then(res => {
             dispatch({

@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import SignupForm from './SignupForm';
 
-class SignupContainer extends Component {
-//Sign Up Form logic will go here
-
-
+class SignupPage extends Component {
     render() {
         return (
             <div className='signup-container container'>
@@ -14,4 +11,4 @@ class SignupContainer extends Component {
     }
 }
 
-export default SignupContainer;
+export default SignupPage;
