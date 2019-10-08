@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+  padding: 25px;
+}
+
+.user-login, .worker-login {
+  border: 1px solid #999;
+  height: 30em;
+  margin-top: 25px;
+  padding: 50px;
+}
+
+.signup-container {
+  border: 1px solid #999;
+  margin-top: 25px;
+  padding: 50px;
+}
+
+button {
+  margin: 7.5px;
+}
+
+.form-btn {
+  margin: 0px 5px;
+}
+
+li {
+  margin: 0 5px;
+}
+
+.login-btn {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.signup-btn {
+  margin-top: 25px;
+}
+
+span {
+  font-family: 'Leckerli One', cursive;
+  font-size: 2rem;
+  padding-left: 7.5px;
+}
